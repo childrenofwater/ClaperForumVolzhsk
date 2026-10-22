@@ -1,99 +1,73 @@
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+# Claper — Профориентационный форум г. Волжск
 
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <a href="https://github.com/ClaperCo/Claper">
-    <img src="priv/static/images/logo.png" alt="Logo" >
-  </a>
+> **Форк открытого проекта [Claper](https://github.com/ClaperCo/Claper)** с добавлением русской локализации и адаптацией для проведения Профориентационного форума в г. Волжск.
 
-  <h3 align="center">Claper</h3>
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](LICENSE.txt)
+[![Original Project](https://img.shields.io/badge/Original-ClaperCo%2FClaper-orange)](https://github.com/ClaperCo/Claper)
+[![Elixir](https://img.shields.io/badge/elixir-1.18-4B275F?logo=elixir&logoColor=white)](https://elixir-lang.org/)
+[![Phoenix](https://img.shields.io/badge/phoenix-1.7-f35424?logo=phoenixframework&logoColor=white)](https://www.phoenixframework.org/)
 
-  <p align="center">
-    The ultimate tool to interact with your audience.
-    <br />
-    <a href="https://docs.claper.co"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/ClaperCo/Claper/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/ClaperCo/Claper/issues">Request Feature</a>
-  </p>
-</div>
+---
 
-[![Product Name Screen Shot][product-screenshot]](https://claper.co)
+## 🇷🇺 О форке / About this fork
 
-Claper turns your presentations into an interactive, engaging and exciting experience.
+Данный репозиторий представляет собой форк интерактивной презентационной платформы **[Claper](https://github.com/ClaperCo/Claper)**.  
+Форк подготовлен в рамках организации **«Профориентационного форума г. Волжск»** для вовлечения молодежи и участников форума в реальном времени.
 
-Claper has a two-sided mission:
+### Основные внесенные изменения (Modifications):
+1. **Полная русская локализация пользовательского интерфейса**:
+   - Переведены экраны участников (вход по коду сессии, голосования, вопросы спикерам, чат, реакции, смайлы).
+   - Переведены интерфейсы докладчиков и модераторов (загрузка презентаций, создание опросов, викторин, форм обратной связи).
+   - Локализованы экраны авторизации, сброса пароля и настроек профиля.
+   - Настроена поддержка грамматических форм множественного числа для русского языка (`Gettext` plural forms: 1, 2-4, 5+).
+2. **Адаптация конфигурации**:
+   - Русский язык (`ru`) добавлен в список поддерживаемых локалей и установлен языком по умолчанию.
+   - Подготовка окружения для развертывания на площадке форума.
 
-- The first one is to help these people presenting an idea or a message by giving them the opportunity to make their presentation unique and to have real-time feedback from their audience.
-- The second one is to help each participant to take their place, to be an actor in the presentation, in the meeting and to feel important and useful.
+---
 
-Supported languages: 🇬🇧 English, 🇫🇷 French, 🇩🇪 German, 🇪🇸 Spanish, 🇳🇱 Dutch, 🇮🇹 Italian, 🇭🇺 Hungarian, 🇱🇻 Latvian
+## 👏 Благодарности и первоисточник (Attribution & Credits)
 
-### Built With
+Мы выражаем искреннюю благодарность создателю **[Alex Lion](https://github.com/alxlion)** и всем участникам команды **[ClaperCo](https://github.com/ClaperCo)** за создание замечательного инструмента для интерактивных презентаций и предоставление его миру как открытого ПО.
 
-Claper is proudly powered by Phoenix and Elixir.
+- **Оригинальный репозиторий**: [https://github.com/ClaperCo/Claper](https://github.com/ClaperCo/Claper)
+- **Официальный сайт**: [https://claper.co](https://claper.co)
+- **Документация Claper**: [https://docs.claper.co](https://docs.claper.co)
 
-[![Phoenix][Phoenix]][Phoenix-url] [![Elixir][Elixir]][Elixir-url] [![Tailwind][Tailwind]][Tailwind-url]
+Пожалуйста, поддержите оригинальный проект звёздочкой ⭐️ на [GitHub](https://github.com/ClaperCo/Claper)!
 
-## Documentation
+---
 
-You can find all the instructions and configuration in [the documentation](https://docs.claper.co/).
+## 🚀 Быстрый старт (Quick Start)
 
-## Contributing
+### С использованием Docker Compose (рекомендуется):
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+1. **Скопируйте пример настроек окружения**:
+   ```bash
+   cp .env.sample .env
+   ```
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+2. **Запустите контейнеры**:
+   ```bash
+   docker compose -f compose.dev.yml up -d
+   ```
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/amazing_feature`)
-3. Commit your Changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the Branch (`git push origin feature/amazing_feature`)
-5. Open a Pull Request on the `dev` branch
+3. **Инициализируйте базу данных** (при первом запуске):
+   ```bash
+   docker compose -f compose.dev.yml exec app mix ecto.setup
+   ```
 
-<!-- LICENSE -->
+4. Откройте приложение в браузере: **[http://localhost:4000](http://localhost:4000)**.
 
-## License
+---
 
-Distributed under the GPLv3 License. See `LICENSE.txt` for more information.
+## 📜 Лицензия (License)
 
-<!-- CONTACT -->
+В полном соответствии с условиями оригинального проекта, этот форк распространяется под свободной лицензией **GNU Affero General Public License v3.0 (AGPL-3.0)**.
 
-## Links
+- Исходный код остаётся полностью открытым.
+- Любые последующие модификации при публичном сетевом использовании должны также публиковаться под лицензией AGPLv3.
+- Полный текст лицензии доступен в файле [LICENSE.txt](LICENSE.txt).
 
-[![](https://img.shields.io/badge/ClaperCo/Claper-000000?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/ClaperCo/Claper)
-
-[![](https://img.shields.io/badge/Discord-5052db?style=for-the-badge&logo=Discord&logoColor=white)](https://discord.gg/M7ejVaC9gA)
-
-[![](https://img.shields.io/badge//r/claper-ed491a?style=for-the-badge&logo=Reddit&logoColor=white)](https://reddit.com/r/claper)
-
-[![](<https://img.shields.io/badge/Alex_Lion_(Founder)-000000?style=for-the-badge&logo=x&logoColor=white>)](https://x.com/alxlion_)
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-
-[contributors-shield]: https://img.shields.io/github/contributors/ClaperCo/Claper.svg?style=for-the-badge
-[contributors-url]: https://github.com/ClaperCo/Claper/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/ClaperCo/Claper.svg?style=for-the-badge
-[forks-url]: https://github.com/ClaperCo/Claper/network/members
-[stars-shield]: https://img.shields.io/github/stars/ClaperCo/Claper.svg?style=for-the-badge
-[stars-url]: https://github.com/ClaperCo/Claper/stargazers
-[issues-shield]: https://img.shields.io/github/issues/ClaperCo/Claper.svg?style=for-the-badge
-[issues-url]: https://github.com/ClaperCo/Claper/issues
-[license-shield]: https://img.shields.io/github/license/ClaperCo/Claper.svg?style=for-the-badge
-[license-url]: https://github.com/ClaperCo/Claper/blob/master/LICENSE.txt
-[product-screenshot]: /priv/static/images/preview.png
-[Elixir]: https://img.shields.io/badge/elixir-4B275F?style=for-the-badge&logo=elixir&logoColor=white
-[Elixir-url]: https://elixir-lang.org/
-[Tailwind]: https://img.shields.io/badge/tailwind-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white
-[Tailwind-url]: https://tailwindcss.com/
-[Phoenix]: https://img.shields.io/badge/phoenix-f35424?style=for-the-badge&logo=&logoColor=white
-[Phoenix-url]: https://www.phoenixframework.org/
+Copyright (c) Claper contributors & Alex Lion.
+Modifications for Volzhsk Career Guidance Forum (c) 2026.
