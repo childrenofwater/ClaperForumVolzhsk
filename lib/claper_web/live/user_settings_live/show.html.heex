@@ -306,6 +306,7 @@
               labelClass="text-xs font-medium text-base-content/60 uppercase tracking-wide"
               array={
                 [
+                  {"Русский", "ru"},
                   {"Deutsch", "de"},
                   {"English", "en"},
                   {"Español", "es"},
@@ -318,6 +319,7 @@
                 ]
                 |> Enum.filter(fn {_name, code} ->
                   code in Application.get_env(:claper, :languages, [
+                    "ru",
                     "en",
                     "fr",
                     "es",
