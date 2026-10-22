@@ -24,6 +24,7 @@ import "./admin-charts.js";
 
 // Get supported locales from backend configuration or fallback to default list
 const supportedLocales = window.claperConfig?.supportedLocales || [
+  "ru",
   "en",
   "fr",
   "de",
